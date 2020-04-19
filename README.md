@@ -23,10 +23,10 @@ now
 
 ## The idea behind the example
 
-Apollo is a GraphQL client that allows you to easily query the exact data you need from a GraphQL server. In addition to fetching and mutating data, Apollo analyzes your queries and their results to construct a client-side cache of your data, which is kept up to date as further queries and mutations are run, fetching more results from the server.
+Apollo - это клиент GraphQL, который позволяет легко запрашивать точные данные с сервера GraphQL. В дополнение к извлечению и изменению данных, Apollo анализирует ваши запросы и их результаты, чтобы создать кэш ваших данных на стороне клиента, который обновляется по мере выполнения дальнейших запросов и мутаций, получая больше результатов с сервера.
 
-In this simple example, we integrate Apollo seamlessly with Next by wrapping our _pages_ inside a [higher-order component (HOC)](https://facebook.github.io/react/docs/higher-order-components.html). Using the HOC pattern we're able to pass down a central store of query result data created by Apollo into our React component hierarchy defined inside each page of our Next application.
+В этом простом примере мы без проблем интегрируем Apollo с Next, оборачивая наши страницы в компонент высшего порядка (HOC). Используя шаблон HOC, мы можем передать центральное хранилище данных результатов запроса, созданных Apollo, в нашу иерархию компонентов React, определенную на каждой странице нашего следующего приложения.
 
-On initial page load, while on the server and inside `getInitialProps`, we invoke the Apollo method, [`getDataFromTree`](http://dev.apollodata.com/react/server-side-rendering.html#getDataFromTree). This method returns a promise; at the point in which the promise resolves, our Apollo Client store is completely initialized.
+При начальной загрузке страницы, находясь на сервере и внутри getInitialProps, мы вызываем метод Apollo, getDataFromTree. Этот метод возвращает обещание; в момент разрешения обещания наш клиентский магазин Apollo полностью инициализируется.
 
-This example relies on [graph.cool](http://graph.cool) for its GraphQL backend and [Emotion](https://emotion.sh/) for it's CSS-in-JS solution.
+Этот пример опирается на graph.cool для его бэкэнда GraphQL и Emotion для его решения CSS-in-JS.
